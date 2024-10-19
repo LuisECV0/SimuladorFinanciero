@@ -1,59 +1,66 @@
 import React, { useContext } from 'react';
 import { FinanzasContext } from './Variables';
-import '../Frontend/Gastos.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-const Gastos = () => {
+
+const Gastos = ({ nextStep }) => {
     const { vivienda, setVivienda, alimentacion, setAlimentacion, transporte, setTransporte, entretenimiento, setEntretenimiento, gastosFijos, setGastosFijos } = useContext(FinanzasContext);
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        nextStep(); 
+    };
+
     return (
-        <Form>
-            <h2>Gastos</h2>
-            <Form.Label>
-                Vivienda:
-                <Form.Control
-                    type="number"
-                    value={vivienda}
-                    onChange={(e) => setVivienda(parseFloat(e.target.value))}
+        <Form onSubmit={handleSubmit}>
+            <h2 className="text-light">Gastos</h2>
+            <Form.Group className="mb-3">
+                <Form.Label className="text-light">Vivienda</Form.Label>
+                <Form.Control 
+                    type="number" 
+                    value={vivienda} 
+                    onChange={(e) => setVivienda(e.target.value)} 
+                    placeholder="Gastos de vivienda"
                 />
-            </Form.Label>
-
-            <Form.Label>
-                Alimentación:
-                <Form.Control
-                    type="number"
-                    value={alimentacion}
-                    onChange={(e) => setAlimentacion(parseFloat(e.target.value))}
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label className="text-light">Alimentación</Form.Label>
+                <Form.Control 
+                    type="number" 
+                    value={alimentacion} 
+                    onChange={(e) => setAlimentacion(e.target.value)} 
+                    placeholder="Gastos de alimentación"
                 />
-            </Form.Label>
-
-            <Form.Label>
-                Transporte:
-                <Form.Control
-                    type="number"
-                    value={transporte}
-                    onChange={(e) => setTransporte(parseFloat(e.target.value))}
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label className="text-light">Transporte</Form.Label>
+                <Form.Control 
+                    type="number" 
+                    value={transporte} 
+                    onChange={(e) => setTransporte(e.target.value)} 
+                    placeholder="Gastos de transporte"
                 />
-            </Form.Label>
-
-            <Form.Label>
-                Entretenimiento:
-                <Form.Control
-                    type="number"
-                    value={entretenimiento}
-                    onChange={(e) => setEntretenimiento(parseFloat(e.target.value))}
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label className="text-light">Entretenimiento</Form.Label>
+                <Form.Control 
+                    type="number" 
+                    value={entretenimiento} 
+                    onChange={(e) => setEntretenimiento(e.target.value)} 
+                    placeholder="Gastos de entretenimiento"
                 />
-            </Form.Label>
-
-            <Form.Label>
-                Gastos Fijos:
-                <Form.Control
-                    type="number"
-                    value={gastosFijos}
-                    onChange={(e) => setGastosFijos(parseFloat(e.target.value))}
+            </Form.Group>
+            <Form.Group className="mb-3">
+                <Form.Label className="text-light">Gastos Fijos</Form.Label>
+                <Form.Control 
+                    type="number" 
+                    value={gastosFijos} 
+                    onChange={(e) => setGastosFijos(e.target.value)} 
+                    placeholder="Otros gastos fijos"
                 />
-            </Form.Label>
-
+            </Form.Group>
+            <Button variant="primary" type="submit">Siguiente</Button>
+            
         </Form>
     );
 };

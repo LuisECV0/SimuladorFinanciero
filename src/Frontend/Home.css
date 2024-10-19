@@ -1,0 +1,61 @@
+/* Home.css */
+
+/* General background color */
+body, .container {
+    background-color: #2C2F33;
+    color: #FFFFFF;
+  }
+  
+  /* Navbar styles */
+  .navbar {
+    background-color: #23272A;
+  }
+  
+  .nav-link {
+    color: #99AAB5 !important;
+  }
+  
+  .nav-link:hover {
+    color: #FFFFFF !important;
+  }
+  
+  /* Button styles */
+  .btn-primary {
+    background-color: #7289DA;
+    border: none;
+  }
+  
+  .btn-primary:hover {
+    background-color: #5b6eae;
+  }
+  
+  .btn-secondary {
+    background-color: #99AAB5;
+    border: none;
+  }
+  
+  .btn-secondary:hover {
+    background-color: #7289DA;
+  }
+  
+  /* Form styles */
+  form {
+    background-color: #23272A;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .form-control {
+    background-color: #2C2F33;
+    color: #FFFFFF;
+    border: 1px solid #7289DA;
+  }
+  
+  .form-control::placeholder {
+    color: #99AAB5;
+  }
+  
+  h2 {
+    color: #7289DA;
+  }
+  

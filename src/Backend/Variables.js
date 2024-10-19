@@ -14,7 +14,6 @@ const Variables = ({ children }) => {
     const [ahorroMensual, setAhorroMensual] = useState(0);
     const [deudas, setDeudas] = useState(0);
 
-    // Cálculos
     const totalIngresos = parseFloat(salario) + parseFloat(otrosIngresos);
     const totalGastos = parseFloat(vivienda) + parseFloat(alimentacion) + parseFloat(transporte) + parseFloat(entretenimiento) + parseFloat(gastosFijos);
     const balance = totalIngresos - totalGastos;

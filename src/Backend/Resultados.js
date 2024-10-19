@@ -1,18 +1,19 @@
-import React from 'react';
-import { useContext } from 'react';
-import { FinanzasContext } from './Variables'; // Asegúrate de que la ruta sea correcta
+import React, { useContext } from 'react';
+import { FinanzasContext } from './Variables';
+import Button from 'react-bootstrap/Button';
 
-const Resultados = () => {
-    const { totalIngresos, totalGastos, balance } = useContext(FinanzasContext);
+const Resultados = ({ prevStep }) => {
+    const { totalIngresos, totalGastos, balance, porcentajeAhorro, porcentajeEndeudamiento } = useContext(FinanzasContext);
 
     return (
-        <div className="container my-4">
-            <h2 className="text-light">Resultados</h2>
-            <div className="alert alert-info">
-                <strong>Total Ingresos:</strong> {totalIngresos} <br />
-                <strong>Total Gastos:</strong> {totalGastos} <br />
-                <strong>Balance:</strong> {balance}
-            </div>
+        <div className="text-light">
+            <h2>Resultados</h2>
+            <p>Total de Ingresos: {totalIngresos}</p>
+            <p>Total de Gastos: {totalGastos}</p>
+            <p>Balance: {balance}</p>
+            <p>Porcentaje de Ahorro: {porcentajeAhorro}%</p>
+            <p>Porcentaje de Endeudamiento: {porcentajeEndeudamiento}%</p>
+            <Button variant="secondary" onClick={prevStep}>Atrás</Button>
         </div>
     );
 };
